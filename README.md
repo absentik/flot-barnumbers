@@ -22,13 +22,16 @@ The below will continue to work for now to prevent breaking of existing code
         }
     }
 
-There are 2 other additional options
+There are other additional options
 
     series: {
         bars: {
             numbers: {
-                xAlign : function or number,
-                yAlign : function or number,
+                show : boolean, 
+                processing: null or function, 
+                xAlign : function or number, 
+                yAlign : function or number, 
+                font : {size : number, style : string, weight : string, family : string, color : string, stroke : string, stroke_width : number}
             }
         }
     }
