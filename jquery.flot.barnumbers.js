@@ -1,5 +1,6 @@
 /* Copyright Joe Tsoi, FreeBSD-License
  * simple flot plugin to draw bar numbers halfway in bars
+ * https://github.com/joetsoi/flot-barnumbers
  *
  * options are
  * series: {
@@ -19,6 +20,7 @@
  * font: {weight: "bold", family: "san-serif"}
  * font: {size: 12, weight: "bold", family: "Verdana", color: "#545454"}
  * font: {size: 11, style: "italic", weight: "bold", family: "Arial", color: "blue", stroke: "white"}
+ * font: {size: 11, style: "italic", weight: "bold", family: "Arial", color: "blue", stroke: "white", stroke_width: 0.7}
  */
 (function ($) {
     var options = {
@@ -69,7 +71,7 @@
                     }
                     if (font.stroke) {
                         ctx.strokeStyle = font.stroke;
-                        ctx.lineWidth = 0.5;
+                        ctx.lineWidth = font.stroke_width ? font.stroke_width : 0.5;
                         stroked = true;
                     }
                     
@@ -146,6 +148,6 @@
         init: init,
         options: options,
         name: 'barnumbers',
-        version: '0.7'
+        version: '0.8'
     });
 })(jQuery);
